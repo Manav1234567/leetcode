@@ -13,20 +13,20 @@ class Solution:
             prev = curr
             curr = curr.next
         
-        if (length == 0 or length == 1 or k == 0):
+        if (length == 0 or length == 1):
             return head
         k = k % length
         if (k == 0):
             return head
-            
+
+        prev.next = head
+        prev = None
         dummy = head
-        prev_dummy = None
         for i in range(length - k):
-            prev_dummy = dummy
+            prev = dummy
             if dummy:
                 dummy = dummy.next
 
-        prev.next = head
-        prev_dummy.next = None
+        prev.next = None
 
         return dummy
