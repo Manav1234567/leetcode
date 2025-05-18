@@ -22,7 +22,7 @@ class Solution:
         prev.next = head
         prev = None
         dummy = head
-        for i in range(length - k):
+        for _ in range(length - k):
             prev = dummy
             if dummy:
                 dummy = dummy.next
