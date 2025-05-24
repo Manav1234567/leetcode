@@ -1,9 +1,16 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        hashmap = {nums[i]: 0 for i in range(len(nums))}
+        res = majority = 0
+        
+        for n in nums:
+            if majority == 0:
+                res = n
+            
+            majority += 1 if n == res else -1
+        
+        return res
 
-        for i in range(len(nums)):
-            hashmap[nums[i]] += 1
-
-        print(hashmap)
-        return max(hashmap, key = hashmap.get)
+        # For Boyer Moore Voting algorithm, 
+        # if you are not given that the majority
+        # element occurs more than n/2 times,
+        # you need to check for it separately.
