@@ -5,7 +5,6 @@ class Solution:
             if pos < 0:
                 return False
             t = t[pos+1:]
-            print(t)
         return True
 
         
