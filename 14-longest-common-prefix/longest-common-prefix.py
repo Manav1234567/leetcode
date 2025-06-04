@@ -8,5 +8,6 @@ class Solution:
                     break
                 elif j >= len(i):
                     prefix = prefix[:len(i)]
+                    break
 
         return prefix
