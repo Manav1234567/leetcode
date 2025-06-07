@@ -13,7 +13,7 @@ class Solution:
             prev = curr
             curr = curr.next
         
-        if (length == 0 or length == 1):
+        if (length <= 1):
             return head
         k = k % length
         if (k == 0):
@@ -21,12 +21,11 @@ class Solution:
 
         prev.next = head
         prev = None
-        dummy = head
+        curr = head
         for _ in range(length - k):
-            prev = dummy
-            if dummy:
-                dummy = dummy.next
+            prev = curr
+            curr = curr.next
 
         prev.next = None
 
-        return dummy
+        return curr
