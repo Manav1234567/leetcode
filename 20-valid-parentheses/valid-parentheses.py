@@ -1,13 +1,11 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        opening = {"(": 1, "{": 2, "[": 3}
-        closing = {")": 1, "}": 2, "]": 3}
-        valid = True
+        brackets = {"(": ")", "{": "}", "[": "]"}
         stack = []
         for i in s:
-            if i in opening:
+            if i in brackets:
                 stack.append(i)
-            elif stack != [] and opening[stack[-1]] == closing[i]:
+            elif stack and i == brackets[stack[-1]]:
                 stack.pop()
             else:
                 return False
