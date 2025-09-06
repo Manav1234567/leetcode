@@ -19,9 +19,8 @@ class Solution:
         gap = right - left
         if gap == 0: return head
 
-        if left == 1:
-            head, _ = reverse(head, gap)
-            return head
+        if left == 1: return reverse(head, gap)[0]
+        
         curr = head
         while curr and left - 2 > 0:
             curr = curr.next
