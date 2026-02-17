@@ -17,13 +17,9 @@ class Solution:
                     a, b = stack.pop()
                     grid[a][b] = "0"
 
-                    if a >= 1 and grid[a - 1][b] == "1": 
-                        stack.append((a - 1, b))
-                    if b >= 1 and grid[a][b - 1] == "1": 
-                        stack.append((a, b - 1))
-                    if a < rows - 1 and grid[a + 1][b] == "1": 
-                        stack.append((a + 1, b))
-                    if b < cols - 1 and grid[a][b + 1] == "1": 
-                        stack.append((a, b + 1))
+                    if a >= 1 and grid[a - 1][b] == "1": stack.append((a - 1, b))
+                    if b >= 1 and grid[a][b - 1] == "1": stack.append((a, b - 1))
+                    if a < rows - 1 and grid[a + 1][b] == "1": stack.append((a + 1, b))
+                    if b < cols - 1 and grid[a][b + 1] == "1": stack.append((a, b + 1))
 
         return counter
