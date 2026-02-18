@@ -5,11 +5,10 @@ class Solution:
         
         n_2 = 2
         n_1 = 1
-        ans = n_2 + n_1
 
         for i in range(3, n + 1):
-            ans = n_2 + n_1
+            temp = n_2 + n_1
             n_1 = n_2
-            n_2 = ans
+            n_2 = temp
         
-        return ans
+        return n_2
