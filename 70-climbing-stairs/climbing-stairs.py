@@ -13,4 +13,4 @@ class Solution:
         right = self.hmap[n-2] if n-2 in self.hmap else self.climbStairs(n - 2)
         self.hmap[n] = left + right
 
-        return  self.hmap[n]
+        return self.hmap[n]
